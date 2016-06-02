@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vacatime.info</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" charset="utf-8"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDd73A2R8QxCELsBFzN1Iq-Sdw9LYFsnLo"></script>
+</head>
+<body>
+  <header>
+    <%= link_to 'All countries', countries_path %>
+  </header>
+  <br>
+
+<%= yield %>
+
+</body>
+</html>
