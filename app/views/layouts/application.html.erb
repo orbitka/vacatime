@@ -11,14 +11,15 @@
 </head>
 <body>
   <header>
-    <h3>VacaTime.info</h3>
-    <%= link_to 'Home', root_path %> |
-    <%= link_to 'All countries', countries_path %>
+    <h3><%= link_to 'VacaTime.info', root_path %></h3>
+    <%= link_to 'Home', root_path %>
+    |  <%= link_to 'Countries', countries_path %>
+    |  <%= link_to 'Continents', continents_path %>
   </header>
   <br>
 
 <%= yield %>
 
-<footer><a href="https://www.facebook.com/vacatime.info/">facebook.com/vacatime.info</a></footer>
+<footer><a href="https://www.facebook.com/vacatime.info/" target="blank">facebook.com/vacatime.info</a></footer>
 </body>
 </html>
