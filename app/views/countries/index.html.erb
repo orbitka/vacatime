@@ -2,10 +2,19 @@
 
 <h1>Countries</h1>
 
+<!-- <form action="form_action.asp">
+  Search text <input type="search" id="searchForm" name="search" autocomplete="on">
+  <input type="submit">
+</form>
+
+<button onclick="searchBox()">Search </button>
+
+<p id="search-box"></p> -->
+
   <tbody>
     <% @countries.each do |country| %>
     <ul>
-      <li class="shadow-link"><%= link_to country.name, country_path(country.id) %>
+      <li class="shadow-link"><%= link_to country.name, country_path(country.alpha2code) %>
         <br>
         <%link_to 'Edit', edit_country_path(country) %>
 

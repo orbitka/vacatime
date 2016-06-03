@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<!-- DYNAMICALLY SELECTED COUNTRY -->
+<h1><%= @country.name %></h1>
 
 <p>
   Country:<br>
@@ -15,10 +17,10 @@
   <%= @country.alpha3code %>
 </p>
  -->
-<p>
+<!-- <p>
   Continent:<br>
   <strong><%= @country.continent %></strong>
-</p>
+</p> -->
 
 <!-- <p>
   <strong>Capital:</strong>
@@ -34,6 +36,42 @@
   <strong>Longitude:</strong>
   <%= @country.longitude %>
 </p> -->
+
+
+<!-- AJAX CALLS -->
+
+<ul id="country_info">
+</ul>
+
+<p> ajax start shere </p>
+<script>
+var country_code = "<%= @country.alpha2code %>"
+console.log("hello")
+// $.ajax(url: "https://restcountries.eu/rest/v1/all").done (html) ->
+//   $("#country_info").append html
+$.ajax({
+  url: 'https://restcountries.eu/rest/v1/alpha/' + country_code,
+  data:{
+    format:'json'
+  },
+  success: (function(data){
+   console.log(data);
+  //  $('#country_info').append(data)
+
+  // data.forEach(function(country){
+  // })
+  $('#country_info').append("<li>" + data.name + "<li>")
+
+
+  })
+})
+;
+
+</script>
+
+
+
+<!-- END OF AJAX -->
 
 <%= link_to 'Edit', edit_country_path(@country) %> |
 <%= link_to 'All countries', countries_path %>

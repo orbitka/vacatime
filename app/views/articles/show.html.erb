@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Country:</strong>
+  <!-- <%= @article.country_id %> -->
+  <%= @article.country.name %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+
+<p>
+  <strong>Photo:</strong><br>
+  <img class="country-image" src="<%= @article.photo %>" alt="" />
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @article.link %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

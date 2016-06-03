@@ -10,6 +10,7 @@ class CountriesController < ApplicationController
   # GET /countries/1
   # GET /countries/1.json
   def show
+    @articles = Article.where(country_id: params[:id])
   end
 
   # GET /countries/new
@@ -64,7 +65,8 @@ class CountriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_country
-      @country = Country.find(params[:id])
+      # @country = Country.find(params[:id])
+      @country = Country.find_by(alpha2code: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

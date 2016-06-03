@@ -39,6 +39,14 @@ header a {
   font: 1.5em Georgia, "Bitstream Charter", "URW Bookman L", "Century Schoolbook L", serif;
 }
 
+.country-image {
+  width: 60%;
+}
+.miniature {
+  width: 100px;
+}
+
+
 footer {
   background: darkblue;
   width: 100%;
