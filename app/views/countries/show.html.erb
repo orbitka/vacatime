@@ -1,26 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @country.name %>
+  Country:<br>
+  <strong><%= @country.name %></strong>
 </p>
 
 <p>
-  <strong>Code2:</strong>
-  <%= @country.alpha2code %>
+  2-letter Country Code:<br>
+  <strong><%= @country.alpha2code %></strong>
 </p>
 
-<p>
+<!-- <p>
   <strong>Code3:</strong>
   <%= @country.alpha3code %>
 </p>
-
+ -->
 <p>
-  <strong>Continent:</strong>
-  <%= @country.continent %>
+  Continent:<br>
+  <strong><%= @country.continent %></strong>
 </p>
 
-<p>
+<!-- <p>
   <strong>Capital:</strong>
   <%= @country.capital %>
 </p>
@@ -33,7 +33,7 @@
 <p>
   <strong>Longitude:</strong>
   <%= @country.longitude %>
-</p>
+</p> -->
 
 <%= link_to 'Edit', edit_country_path(@country) %> |
 <%= link_to 'All countries', countries_path %>
