@@ -77,13 +77,13 @@ header a {
   float: right;
   width: 50%;
   position: relative;
-  height: 16em;
+  height: 12em;
 }
 
 #cow {
   position: absolute;
-  bottom: -8px;
-  right: 1%;
+  bottom: 3px;
+  right: -4%;
   width: 100%;
 }
 
