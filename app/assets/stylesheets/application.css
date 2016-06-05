@@ -1,10 +1,16 @@
+@import url(https://fonts.googleapis.com/css?family=Chango&font-effect-fire-animation);
+@import url(https://fonts.googleapis.com/css?family=Tangerine);
+
+
 html {
   background: lightblue;
   text-align: center;
   background-image: url("https://orbitka.files.wordpress.com/2014/03/02-twelve-apostles.jpg");
   background-repeat: no-repeat;
-  background-position: right top;
+  background-position: left top;
   background-attachment: fixed;
+  background-size:cover;
+
 }
 
 body {
@@ -22,6 +28,16 @@ header {
   width: 100%;
   color: gold;
 }
+
+h1 {
+  /*text-shadow: 4px 4px 4px #aaa;*/
+  /*font-family: 'Chango', cursive;*/
+  list-style-type: none;
+  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+  color: white;
+  font: 3em Chango, Georgia, "Bitstream Charter", "URW Bookman L", "Century Schoolbook L", serif;
+}
+
 
 a {
   text-decoration: none;
