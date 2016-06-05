@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Articles</h1>
+<h1>Blog Posts</h1>
+<%= link_to 'New Article', new_article_path %>
 
 <table>
   <thead>
     <tr>
       <th>Country</th>
       <th>Title</th>
-      <th>Text</th>
       <th>Photo</th>
-      <!-- <th>Link</th> -->
-      <th colspan="3"></th>
+      <th>Text</th>
+      <!-- <th>Source</th> -->
     </tr>
   </thead>
 
@@ -19,13 +19,10 @@
       <tr>
         <td><%= article.country.name %></td>
         <td><%= article.title %></td>
+        <td><img class="miniature" src="<%= article.photo %>" alt="" /><br><%= link_to 'Show', article %></td>
         <td><%= article.text %></td>
-        <td><img class="miniature" src="<%= article.photo %>" alt="" /></td>
         <!-- <td><%= article.photo %></td> -->
         <!-- <td><%= article.link %></td> -->
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

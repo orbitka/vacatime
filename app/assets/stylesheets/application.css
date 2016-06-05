@@ -56,10 +56,17 @@ header a {
 }
 
 .country-image {
-  width: 60%;
+  width: 80%;
+  border-right: outset 20px white;
+  border-bottom: outset 30px white;
+  border-left: outset 20px white;
+  border-top: outset 15px white;
+  box-shadow: 1px 2px 3px black, 1px 1px 3em gray, 1px 1px 0.8em blue;
 }
 .miniature {
-  width: 100px;
+  width: 200px;
+  border: 1px silver solid;
+  box-shadow: 1px 2px 3px black, 1px 1px 3em gray, 1px 1px 0.8em blue;
 }
 
 

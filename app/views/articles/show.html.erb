@@ -1,29 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Country:</strong>
+  <strong>Country:</strong><br>
   <!-- <%= @article.country_id %> -->
   <%= @article.country.name %>
 </p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Title:</strong><br>
   <%= @article.title %>
 </p>
 
 <p>
-  <strong>Text:</strong>
+  <strong>Text:</strong><br>
   <%= @article.text %>
 </p>
 
 <p>
-  <strong>Photo:</strong><br><a href="<%= @article.photo %>"><img class="country-image" src="<%= @article.photo %>" alt="" /></a>
+  <strong>Photo:</strong><br><br>
+  <a href="<%= @article.photo %>"><img class="country-image" src="<%= @article.photo %>" alt="" /></a>
 </p>
 
 <p>
-  <strong>Link:</strong>
-  <%= @article.link %>
+  <strong>Source:</strong><br>
+  <a href="<%= @article.link %>" target="_blank"><%= @article.link %></a>
 </p>
-
+<p>
+  <%= link_to 'Back to all posts', articles_path %> <br>
+</p><i>
 <%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Delete', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+</i>
