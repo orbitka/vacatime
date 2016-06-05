@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Chango&font-effect-fire-animation);
+@import url(https://fonts.googleapis.com/css?family=Tangerine|Chango&effect=3d-float);
 
 html {
   background: lightblue;
@@ -36,6 +36,12 @@ h1 {
   font: 3em Chango, Georgia, "Bitstream Charter", "URW Bookman L", "Century Schoolbook L", serif;
 }
 
+.handwriting {
+  font-family: 'Tangerine', serif;
+  font-size: 2em;
+  text-shadow: 4px 4px 4px #aaa;
+}
+
 
 a {
   text-decoration: none;
@@ -61,21 +67,24 @@ header a {
 
 #cover-left {
   float: left;
-  width: 50%;
+  width: 45%;
   padding-top:30px;
+  padding-left: 5%;
+  line-height: normal;
 }
 
 #cover-right {
   float: right;
   width: 50%;
   position: relative;
+  height: 16em;
 }
 
 #cow {
   position: absolute;
-  bottom: -210px;
-  right: 7%;
-  width: 95%;
+  bottom: -8px;
+  right: 1%;
+  width: 100%;
 }
 
 .country-image {
