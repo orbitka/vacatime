@@ -5,7 +5,7 @@
 <div class="country_div">
   <ul id="country_info">
   </ul>
-  <!-- <div id="map"></div> -->
+  <div id="map"></div>
   <ul id="country_info2">
   </ul>
 
@@ -13,7 +13,7 @@
 <hr>
 
 
-<h2>Blog posts: </h2>
+<h2>More info: </h2>
 <table>
   <tbody>
     <% @country.articles.each do |article| %>
@@ -63,27 +63,23 @@ $.ajax({
   $('#country_info2').append("<li>Country Code (2-letter): <b>" + data.alpha2Code + "</b><li>")
   $('#country_info2').append("<li>Country Code (3-letter): <b>" + data.alpha3Code + "</b><li>")
   $('#country_info2').append("<li>Time-zone: <b>"  + data.timezones[0] +  "</b><li>")
-  return lat = data.latlng[0];
-  return lgn = data.latlng[1];
   })
 });
 </script>
 
 <!-- END OF AJAX -->
 <!-- GOOGLE MAP -->
- <!-- <script>
+ <script>
    var map;
-   var lat = lat;
-   var lng = lng;
 
    function initMap() {
      map = new google.maps.Map(document.getElementById('map'), {
-       center: {lat: lat, lng: lgn},
-       zoom: 4
+       center: {lat: 0, lng: 0},
+       zoom: 1
      });
    }
  </script>
 </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEnDDDCEAJep_7srBw_uXJqx3BhYFrdmA&callback=initMap"
     async defer></script> -->
-<!--  -->
+<!--
