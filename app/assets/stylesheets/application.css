@@ -8,12 +8,11 @@ html {
   background-position: left top;
   background-attachment: fixed;
   background-size:cover;
-
 }
 
 body {
   background: rgba(250,250,250,0.6);
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   padding: 10px;
   -webkit-box-shadow: 10px 10px 30px 0px rgba(0,0,0,0.60);
@@ -38,10 +37,9 @@ h1 {
 
 .handwriting {
   font-family: 'Tangerine', serif;
-  font-size: 2em;
+  font-size: 2.3em;
   text-shadow: 4px 4px 4px #aaa;
 }
-
 
 a {
   text-decoration: none;
@@ -51,7 +49,6 @@ header a {
   color: gold;
 }
 
-/*td a {*/
 .shadow-link {
   list-style-type: none;
   text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
@@ -82,7 +79,7 @@ header a {
 
 #cow {
   position: absolute;
-  bottom: 3px;
+  bottom: -23px;
   right: -4%;
   width: 100%;
 }
@@ -107,4 +104,30 @@ footer {
   width: 100%;
   color: gold;
   padding: 1em 0 1em 0;
+}
+
+#country_info, #country_info2 {
+  text-align: center;
+  margin: 50px;
+  padding: 20px;
+  list-style-type: none;
+  line-height: normal;
+  background: white;
+  width: 400px;
+  margin: auto;
+  box-shadow: 1px 2px 3px black, 1px 1px 3em gray, 1px 1px 0.8em blue;
+
+}
+
+#map {
+    height: 200px;
+    width: 90%;
+    border: 1px solid gray;
+    margin: auto;
+    box-shadow: 1px 2px 3px black, 1px 1px 3em gray, 1px 1px 0.8em blue;
+  }
+
+td {
+  background: rgba(250,250,250,0.7);
+  box-shadow: 1px 2px 3px gray, 1px 1px 3em gray, 1px 1px 0.8em blue;
 }

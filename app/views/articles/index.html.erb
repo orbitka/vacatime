@@ -10,19 +10,17 @@
       <th>Title</th>
       <th>Photo</th>
       <th>Text</th>
-      <!-- <th>Source</th> -->
     </tr>
   </thead>
 
   <tbody>
     <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.country.name %></td>
+    <% country = article.country %>
+          <tr>
+        <td><%= link_to article.country.name, country_path(country.alpha2code) %></td>
         <td><%= article.title %></td>
         <td><img class="miniature" src="<%= article.photo %>" alt="" /><br><%= link_to 'Show', article %></td>
         <td><%= article.text %></td>
-        <!-- <td><%= article.photo %></td> -->
-        <!-- <td><%= article.link %></td> -->
       </tr>
     <% end %>
   </tbody>

@@ -1,54 +1,48 @@
 <p id="notice"><%= notice %></p>
-<!-- DYNAMICALLY SELECTED COUNTRY -->
+
 <h1><%= @country.name %></h1>
 
-<p>
-  Country:<br>
-  <strong><%= @country.name %></strong>
-</p>
+<div class="country_div">
+  <ul id="country_info">
+  </ul>
+  <!-- <div id="map"></div> -->
+  <ul id="country_info2">
+  </ul>
 
-<p>
-  2-letter Country Code:<br>
-  <strong><%= @country.alpha2code %></strong>
-</p>
-
-<!-- <p>
-  <strong>Code3:</strong>
-  <%= @country.alpha3code %>
-</p>
- -->
-<!-- <p>
-  Continent:<br>
-  <strong><%= @country.continent %></strong>
-</p> -->
-
-<!-- <p>
-  <strong>Capital:</strong>
-  <%= @country.capital %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @country.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @country.longitude %>
-</p> -->
+</div>
+<hr>
 
 
-<!-- AJAX CALLS -->
+<h2>Blog posts: </h2>
+<table>
+  <tbody>
+    <% @country.articles.each do |article| %>
+    <% country = article.country %>
+      <tr>
+        <td><%= link_to article.country.name, country_path(country.alpha2code) %></td>
+        <td><%= article.title %></td>
+        <td><img class="miniature" src="<%= article.photo %>" alt="" /><br><%= link_to 'Show', article %></td>
+        <td><%= article.text %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<ul id="country_info">
-</ul>
+<br>
 
-<p> ajax start shere </p>
+<%= link_to 'New blog post', new_article_path %>
+<br>
+<%= link_to 'Back to all countries', countries_path %>
+
+
+
+<!-- <p> ajax start shere </p> -->
 <script>
 var country_code = "<%= @country.alpha2code %>"
 console.log("hello")
-// $.ajax(url: "https://restcountries.eu/rest/v1/all").done (html) ->
-//   $("#country_info").append html
+var lat = 0;
+var lng = 0;
+
 $.ajax({
   url: 'https://restcountries.eu/rest/v1/alpha/' + country_code,
   data:{
@@ -56,22 +50,40 @@ $.ajax({
   },
   success: (function(data){
    console.log(data);
-  //  $('#country_info').append(data)
 
-  // data.forEach(function(country){
-  // })
-  $('#country_info').append("<li>" + data.name + "<li>")
+  $('#country_info').append("<li>Continent: <b>"  + data.region + "</b><li>")
+  $('#country_info').append("<li>Subregion: <b>"  + data.subregion + "</b><li>")
+  $('#country_info').append("<li>Capital: <b>"  + data.capital + "</b><li>")
+  $('#country_info').append("<li>Latitude: <b>"  + data.latlng[0] + "</b> | Longitude: <b>"  + data.latlng[1] + "</b><li>")
+  $('#country_info').append("<li>Area: <b>"  + data.area + " km2 </b><li>")
+  $('#country_info').append("<li>Population: <b>"  + data.population + "</b><li>")
 
-
+  $('#country_info2').append("<li>Currency: <b>"  + data.currencies[0] + "</b><li>")
+  $('#country_info2').append("<li>Primary Language: <b>"  + data.languages[0] + "</b><li>")
+  $('#country_info2').append("<li>Country Code (2-letter): <b>" + data.alpha2Code + "</b><li>")
+  $('#country_info2').append("<li>Country Code (3-letter): <b>" + data.alpha3Code + "</b><li>")
+  $('#country_info2').append("<li>Time-zone: <b>"  + data.timezones[0] +  "</b><li>")
+  return lat = data.latlng[0];
+  return lgn = data.latlng[1];
   })
-})
-;
-
+});
 </script>
 
-
-
 <!-- END OF AJAX -->
+<!-- GOOGLE MAP -->
+ <!-- <script>
+   var map;
+   var lat = lat;
+   var lng = lng;
 
-<%= link_to 'Edit', edit_country_path(@country) %> |
-<%= link_to 'All countries', countries_path %>
+   function initMap() {
+     map = new google.maps.Map(document.getElementById('map'), {
+       center: {lat: lat, lng: lgn},
+       zoom: 4
+     });
+   }
+ </script>
+</script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEnDDDCEAJep_7srBw_uXJqx3BhYFrdmA&callback=initMap"
+    async defer></script> -->
+<!--  -->
